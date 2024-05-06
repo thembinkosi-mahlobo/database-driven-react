@@ -1,21 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import StudentForm from "./StudentForm";
 
 export default function App() {
-  const [students, setStudents] = useState([]);
+  const [students] = useState([]);
 
-  useEffect(() => {
-    getStudents();
-  }, []);
+  // useEffect(() => {
+  //   getStudents();
+  // }, []);
 
-  async function getStudents() {
-    const response = await fetch("http://localhost:8080/students");
-    const data = await response.json();
-    setStudents(data);
-  }
-  <StudentForm />;
+  // async function getStudents() {
+  //   const response = await fetch("http://localhost:8080/students");
+  //   const data = await response.json();
+  //   setStudents(data);
+  // }
+
   return (
     <>
+      <StudentForm />
       <div>
         <h1>Hobbies improves Mental Health!</h1>
         {students.map((students) => {
